@@ -1,2 +1,2 @@
 # LeetCode
-My LeetCode solutions
+Repository housing the LeetCode problems that I have solved.
