@@ -1,30 +1,16 @@
-# Overall Approach:
-# NOTE: I didn't spend a ton of time thinking about this, just wanted something quick that works
-# Take the largest string that both string starts with, then see if it divides both. If not, trim off the end until a match is found.
-# Regular expressions seems to like a good way to check the "division", and I had to do a quick Google search to remind myself on how to do that in Python
-
-import re
+# Overall approach:
+# This one is super straight-forward to me, essentially converting array to another based on if a value meets a threshold
+# I did have to remind myself how to do the array conversion in Python (been a while)
 
 class Solution:
-    def gcdOfStrings(self, str1: str, str2: str) -> str:
-        # Determine largest string that both strings start with
-        size = 0
-        for char in str1:
-            if(size >= len(str2) or char != str2[size]):
-                break
-            size += 1
+    def kidsWithCandies(self, candies: List[int], extraCandies: int) -> List[bool]:
+        # Find the maximum value in the array
+        maxCandies = max(candies)
 
-        # Step back on string until there's a match
-        for i in range(size, -1, -1):
-            x = str1[:i]
-            pattern = r"(" + x + ")+"
-            
-            match1 = re.fullmatch(pattern, str1)
-            if match1 is None:
-                continue
+        # Calculate the minimum value needed for any value to have the greatest number of candies if given all extra
+        minCandiesNeeded = (maxCandies - extraCandies - 1)
 
-            match2 = re.fullmatch(pattern, str2)
-            if match2:
-                return x
-            
-        return ""
+        # Build result array (all values that are > min will have the greatest if given all extra)
+        result = [count > minCandiesNeeded for count in candies]
+
+        return result
