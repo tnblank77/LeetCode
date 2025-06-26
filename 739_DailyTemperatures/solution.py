@@ -11,7 +11,7 @@ class Solution:
             self.temp = temp
 
     def dailyTemperatures(self, temperatures: List[int]) -> List[int]:
-        # Define list of previous days we haven't figured out yet, always to be sorted by temperature descending
+        # Define list of previous days we haven't figured out yet, always to be sorted by temperature ascending
         prev_days = []
         prev_days_len = 0
 
@@ -29,7 +29,7 @@ class Solution:
                 else:
                     break
 
-            # Insert the current day into the previous days such that is sorted by temperature descending
+            # Insert the current day into the previous days such that is sorted by temperature ascending
             idx = 0
             while idx < prev_days_len:
                 if( temperatures[i] > prev_days[idx].temp ):
