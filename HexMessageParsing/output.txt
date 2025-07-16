@@ -1,0 +1,47 @@
+DEBUG parse_msg_test_result timestamp=400, id=40, payload_sz=10, payload=1 2 3 4 5 6 7 8 9 10 
+
+DEBUG adding 1
+DEBUG buffer timestamp=9192, id=153, payload_sz=11, payload=11 56 229 111 162 78 85 193 198 40 179 
+DEBUG buffer timestamp=0, id=0, payload_sz=0, payload=
+DEBUG buffer timestamp=0, id=0, payload_sz=0, payload=
+DEBUG buffer timestamp=0, id=0, payload_sz=0, payload=
+DEBUG buffer timestamp=0, id=0, payload_sz=0, payload=
+
+DEBUG adding 4 more
+DEBUG buffer timestamp=9192, id=153, payload_sz=11, payload=11 56 229 111 162 78 85 193 198 40 179 
+DEBUG buffer timestamp=34964, id=144, payload_sz=12, payload=12 50 55 220 94 45 121 244 33 127 151 110 
+DEBUG buffer timestamp=48538, id=229, payload_sz=13, payload=13 35 94 250 99 155 50 155 83 244 212 14 75 
+DEBUG buffer timestamp=12385, id=69, payload_sz=0, payload=
+DEBUG buffer timestamp=954, id=11, payload_sz=15, payload=15 241 64 116 87 217 127 254 123 181 158 121 245 10 78 
+
+DEBUG adding 1 more
+DEBUG: new message (49802) replacing oldest message (954)
+DEBUG buffer timestamp=9192, id=153, payload_sz=11, payload=11 56 229 111 162 78 85 193 198 40 179 
+DEBUG buffer timestamp=34964, id=144, payload_sz=12, payload=12 50 55 220 94 45 121 244 33 127 151 110 
+DEBUG buffer timestamp=48538, id=229, payload_sz=13, payload=13 35 94 250 99 155 50 155 83 244 212 14 75 
+DEBUG buffer timestamp=12385, id=69, payload_sz=0, payload=
+DEBUG buffer timestamp=49802, id=126, payload_sz=10, payload=10 63 160 12 23 153 54 101 16 29 
+
+DEBUG adding 1 more
+DEBUG: new message (3529) older than oldest message (9192)
+DEBUG buffer timestamp=9192, id=153, payload_sz=11, payload=11 56 229 111 162 78 85 193 198 40 179 
+DEBUG buffer timestamp=34964, id=144, payload_sz=12, payload=12 50 55 220 94 45 121 244 33 127 151 110 
+DEBUG buffer timestamp=48538, id=229, payload_sz=13, payload=13 35 94 250 99 155 50 155 83 244 212 14 75 
+DEBUG buffer timestamp=12385, id=69, payload_sz=0, payload=
+DEBUG buffer timestamp=49802, id=126, payload_sz=10, payload=10 63 160 12 23 153 54 101 16 29 
+
+DEBUG adding 1 more
+DEBUG: new message (14484) replacing oldest message (9192)
+DEBUG buffer timestamp=14484, id=212, payload_sz=10, payload=10 148 123 82 134 251 17 69 34 96 
+DEBUG buffer timestamp=34964, id=144, payload_sz=12, payload=12 50 55 220 94 45 121 244 33 127 151 110 
+DEBUG buffer timestamp=48538, id=229, payload_sz=13, payload=13 35 94 250 99 155 50 155 83 244 212 14 75 
+DEBUG buffer timestamp=12385, id=69, payload_sz=0, payload=
+DEBUG buffer timestamp=49802, id=126, payload_sz=10, payload=10 63 160 12 23 153 54 101 16 29 
+
+DEBUG adding 1 more
+DEBUG: new message (63879) replacing oldest message (12385)
+DEBUG buffer timestamp=14484, id=212, payload_sz=10, payload=10 148 123 82 134 251 17 69 34 96 
+DEBUG buffer timestamp=34964, id=144, payload_sz=12, payload=12 50 55 220 94 45 121 244 33 127 151 110 
+DEBUG buffer timestamp=48538, id=229, payload_sz=13, payload=13 35 94 250 99 155 50 155 83 244 212 14 75 
+DEBUG buffer timestamp=63879, id=151, payload_sz=10, payload=10 246 156 242 253 108 229 230 64 111 
+DEBUG buffer timestamp=49802, id=126, payload_sz=10, payload=10 63 160 12 23 153 54 101 16 29 
