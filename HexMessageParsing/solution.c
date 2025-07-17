@@ -189,6 +189,7 @@ static void parse_msg(char * msg_hex, msg_info_type * info) {
     );
 
     // Allocate and get payload
+    // TODO: add protection against overflow in case payload_sz is corrupted
     info->payload = malloc(info->payload_sz);
     
     for(i = 0; i < info->payload_sz; i++) {
