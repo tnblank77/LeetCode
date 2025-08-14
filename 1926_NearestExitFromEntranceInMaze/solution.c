@@ -1,16 +1,17 @@
-// General approach: - Recursively explore every viable path and return the shortest one
-//                   - Use a queue to ensure shallowest path is explored next
+// General approach: - Initial thought was to recursively explore every viable path and return the shortest one
+//                   - After thinking through it, used a queue to ensure shallowest path is explored next
 
-// Includes
+// INCLUDES
 #include <limits.h>
 
-// Literal constants
-#define DEBUG false
+// LITERAL CONSTANTS
+#define DEBUG false	// Developer toggle to enable debug output for this file
 
 #define MAX_ROW_SZ  (100) // maximum row size per constraints
 #define MAX_COL_SZ  (100) // maximum column size per constraints
 
 // TYPES
+// Types to clarify unsigned/signed integers and their bit size
 typedef unsigned char uint8;
 typedef unsigned short uint16;
 typedef signed long sint32;
@@ -34,7 +35,9 @@ typedef struct {
     dir_t8 dir_from;
 } pos_info_type;
 
-// Memory constants
+// MEMORY CONSTANTS
+// NOTE: prefix with "s_" so it's clear they are static where used in the file
+// Map of direction to it's backwards direction
 static const dir_t8 s_dir_backwards[] = 
     {
     /* DIR_UP    */ DIR_DOWN,
@@ -46,15 +49,15 @@ static const dir_t8 s_dir_backwards[] =
     };
 //TODO: add compiler assert that this table is of size DIR_CNT
 
-// Static variables
+// STATIC VARIBLES
+// NOTE: prefix with "s_" so it's clear they are static where used in the file
 static bool             s_to_explore[MAX_ROW_SZ + 1][MAX_COL_SZ];               // matrix of whether or not we are to explore a cell in the queue
 static pos_info_type    s_explore_queue[(MAX_ROW_SZ + 1) * (MAX_COL_SZ + 1)];   // queue of positions to explore
 static uint16           s_explore_queue_next_idx;   // next index to add to queue of positions to explore
 static uint16           s_explore_idx;              // index of queue we are exploring at
 
 // PROCEDURES
-// function which explores the specified cell, adding any possible future paths to the queue
-// returns whether or not exploration should end
+// Declarations
 static bool explore(int step_cnt, int pos_x, int pos_y, char** maze, int max_x, int max_y, dir_t8 dir_from);
 
 // Main function
@@ -140,7 +143,7 @@ static bool explore(int step_cnt, int pos_x, int pos_y, char** maze, int max_x, 
             }
             else {
                 #if (DEBUG == true)
-                printf("explore result: maze limit, dir=%i (%i, %i)\n", dir, pos_x_new, pos_y_new);
+                    printf("explore result: maze limit, dir=%i (%i, %i)\n", dir, pos_x_new, pos_y_new);
                 #endif
                 continue;
             }
